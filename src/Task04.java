@@ -1,12 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task01 {
-
+public class Task04 {
 
     public static void main(String[] args) {
-
-        String word = "Greek";
 
         List<String> list = new ArrayList<>();
         list.add("A");
@@ -26,16 +23,24 @@ public class Task01 {
         list.add("a");
         list.add("crawfish");
 
-        countOccurance(list, word);
+        calcOccurance(list);
+
     }
 
-    public static void countOccurance(List<String> list, String word) {
-        int count = 0;
-        for (String str : list) {
-            if (str.equals(word)) {
-                count++;
+    static void calcOccurance(List<String> list) {
+        list.sort(null);
+        int counter = 1;
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            String current = list.get(i);
+            String next = list.get(i + 1);
+            if (current.equals(next)) {
+                counter++;
+            } else {
+                System.out.println(list.get(i) + ": " + counter);
+                counter = 1;
+                continue;
             }
         }
-        System.out.println("The word '" + word + "' occurs " + count + " times in the list.");
     }
 }
