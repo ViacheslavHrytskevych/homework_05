@@ -18,29 +18,29 @@ public class Task03 {
         numbers.add(7);
         numbers.add(8);
 
-        List<Integer> uniqueNumbers = findUnique(numbers);
+        List<Integer> unique = findUnique(numbers);
 
-        System.out.println(uniqueNumbers);
+        System.out.println(unique);
     }
 
 
     static List<Integer> findUnique(List<Integer> numbers) {
-        List<Integer> uniqueNumbers = new ArrayList<>();
+        List<Integer> unique = new ArrayList<>();
 
         for (int i = 0; i < numbers.size(); i++) {
             int currentNumber = numbers.get(i);
             boolean isUnique = true;
 
-            for (int j = 0; j < uniqueNumbers.size(); j++) {
-                if (currentNumber == uniqueNumbers.get(j)) {
+            for (int j = 0; j < unique.size(); j++) {
+                if (currentNumber == unique.get(j)) {
                     isUnique = false;
                     break;
                 }
             }
             if (isUnique) {
-                uniqueNumbers.add(currentNumber);
+                unique.add(currentNumber);
             }
         }
-        return uniqueNumbers;
+        return unique;
     }
 }

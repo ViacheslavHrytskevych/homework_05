@@ -5,39 +5,39 @@ public class Task05 {
 
     public static void main(String[] args) {
 
-        List<String> list = new ArrayList<>();
-        list.add("A");
-        list.add("Greek");
-        list.add("was");
-        list.add("crossing");
-        list.add("a");
-        list.add("river");
-        list.add("and");
-        list.add("saw");
-        list.add("a");
-        list.add("Greek");
-        list.add("in");
-        list.add("the");
-        list.add("river");
-        list.add("with");
-        list.add("a");
-        list.add("crawfish");
+        List<String> word = new ArrayList<>();
+        word.add("A");
+        word.add("Greek");
+        word.add("was");
+        word.add("crossing");
+        word.add("a");
+        word.add("river");
+        word.add("and");
+        word.add("saw");
+        word.add("a");
+        word.add("Greek");
+        word.add("in");
+        word.add("the");
+        word.add("river");
+        word.add("with");
+        word.add("a");
+        word.add("crawfish");
 
-        List<Word> occurance = calcOccurance(list);
+        List<Word> occurance = calcOccurance(word);
 
-        for (Word word : occurance) {
-            System.out.println(word.toString());
+        for (Word record : occurance) {
+            System.out.println(record.toString());
         }
     }
 
-    static List<Word> calcOccurance(List<String> list) {
-        list.sort(null);
+    static List<Word> calcOccurance(List<String> word) {
+        word.sort(null);
         int counter = 1;
         List<Word> occurance = new ArrayList<>();
 
-        for (int i = 0; i < list.size() - 1; i++) {
-            String current = list.get(i);
-            String next = list.get(i + 1);
+        for (int i = 0; i < word.size() - 1; i++) {
+            String current = word.get(i);
+            String next = word.get(i + 1);
             if (current.equals(next)) {
                 counter++;
             } else {
@@ -45,7 +45,7 @@ public class Task05 {
                 counter = 1;
             }
         }
-        String last = list.get(list.size() - 1);
+        String last = word.get(word.size() - 1);
         occurance.add(new Word(last, counter));
         return occurance;
     }

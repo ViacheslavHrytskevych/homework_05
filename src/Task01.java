@@ -6,36 +6,36 @@ public class Task01 {
 
     public static void main(String[] args) {
 
-        String word = "Greek";
+        String comparison = "Greek";
 
-        List<String> list = new ArrayList<>();
-        list.add("A");
-        list.add("Greek");
-        list.add("was");
-        list.add("crossing");
-        list.add("a");
-        list.add("river");
-        list.add("and");
-        list.add("saw");
-        list.add("a");
-        list.add("Greek");
-        list.add("in");
-        list.add("the");
-        list.add("river");
-        list.add("with");
-        list.add("a");
-        list.add("crawfish");
+        List<String> word = new ArrayList<>();
+        word.add("A");
+        word.add("Greek");
+        word.add("was");
+        word.add("crossing");
+        word.add("a");
+        word.add("river");
+        word.add("and");
+        word.add("saw");
+        word.add("a");
+        word.add("Greek");
+        word.add("in");
+        word.add("the");
+        word.add("river");
+        word.add("with");
+        word.add("a");
+        word.add("crawfish");
 
-        countOccurance(list, word);
+        countOccurance(word, comparison);
     }
 
-    public static void countOccurance(List<String> list, String word) {
-        int count = 0;
-        for (String str : list) {
-            if (str.equals(word)) {
-                count++;
+    public static void countOccurance(List<String> word, String comparison) {
+        int counter = 0;
+        for (String record : word) {
+            if (record.equals(comparison)) {
+                counter++;
             }
         }
-        System.out.println("The word '" + word + "' occurs " + count + " times in the list.");
+        System.out.println("The word '" + comparison + "' occurs " + counter + " times in the sentence.");
     }
 }

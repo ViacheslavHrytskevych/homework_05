@@ -5,18 +5,19 @@ public class Task02 {
 
     public static void main(String[] args) {
 
-        int[] number = {3, 5, 155, 11, 16, 20};
+        int[] numbers = {3, 5, 155, 11, 16, 20};
 
-        List<Integer> list = toList(number);
+        List<Integer> number = toList(numbers);
 
-        System.out.println(list);
+        System.out.println(number);
     }
 
-    public static List<Integer> toList(int[] number) {
-        List<Integer> list = new ArrayList<>();
-        for (int i : number) {
-            list.add(i);
+    public static List<Integer> toList(int[] numbers) {
+        List<Integer> number = new ArrayList<>();
+        for (int record : numbers) {
+            number.add(record);
         }
-        return list;
+        return number;
     }
+
 }
