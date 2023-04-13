@@ -1,12 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task01 {
-
+public class Task04 {
 
     public static void main(String[] args) {
-
-        String comparison = "Greek";
 
         List<String> word = new ArrayList<>();
         word.add("A");
@@ -26,16 +23,24 @@ public class Task01 {
         word.add("a");
         word.add("crawfish");
 
-        countOccurance(word, comparison);
+        calcOccurance(word);
+
     }
 
-    public static void countOccurance(List<String> word, String comparison) {
-        int counter = 0;
-        for (String record : word) {
-            if (record.equals(comparison)) {
+    static void calcOccurance(List<String> word) {
+        word.sort(null);
+        int counter = 1;
+
+        for (int i = 0; i < word.size() - 1; i++) {
+            String current = word.get(i);
+            String next = word.get(i + 1);
+            if (current.equals(next)) {
                 counter++;
+            } else {
+                System.out.println(word.get(i) + ": " + counter);
+                counter = 1;
+                continue;
             }
         }
-        System.out.println("The word '" + comparison + "' occurs " + counter + " times in the sentence.");
     }
 }
